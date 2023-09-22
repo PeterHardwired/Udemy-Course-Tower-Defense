@@ -10,13 +10,26 @@ public class EnemyController : MonoBehaviour
 
     private Path thePath;
     private int currentPoint;
+    public float timeBetweenAttacks, damagePerAttack;
+    private float attackCounter;
+    private Castle theCastle;
 
     private bool reachedEnd;
 
     // Start is called before the first frame update
     void Start()
     {
-        thePath = FindObjectOfType<Path>();
+        if (thePath == null) 
+        { 
+            thePath = FindObjectOfType<Path>();
+        }
+
+        if (theCastle == null)
+        {
+            theCastle = FindObjectOfType<Castle>();
+        }
+
+        attackCounter = timeBetweenAttacks;
     }
 
     // Update is called once per frame
@@ -38,6 +51,21 @@ public class EnemyController : MonoBehaviour
                     reachedEnd = true;
                 }
             }
+        } else
+        {
+            attackCounter -= Time.deltaTime; 
+            if (attackCounter <= 0)
+            {
+                attackCounter = timeBetweenAttacks;
+                theCastle.TakeDamage(damagePerAttack);
+            }
         }
     }
+
+    public void Setup(Castle newCastle, Path newPath)
+    {
+        theCastle = newCastle;
+        thePath = newPath;
+    }
+
 }
