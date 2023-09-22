@@ -7,9 +7,11 @@ public class Castle : MonoBehaviour
 {
 
     public float castleTotalHealth = 100f ;
-    private float castleCurrentHealth;
+    [HideInInspector]
+    public float castleCurrentHealth;
 
     public Slider healthSlider;
+    public Transform[] attackPoints;
 
     // Start is called before the first frame update
     void Start()

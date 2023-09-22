@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private Castle theCastle;
 
     private bool reachedEnd;
+    private int selectedAttackPoint;
 
     // Start is called before the first frame update
     void Start()
@@ -35,29 +36,36 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!reachedEnd)
+        if(theCastle.castleCurrentHealth > 0)
         {
-            transform.LookAt(thePath.points[currentPoint]);
 
-            transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime);
-
-            if (Vector3.Distance(transform.position, thePath.points[currentPoint].position) < .01f)
+            if (!reachedEnd)
             {
+                transform.LookAt(thePath.points[currentPoint]);
 
+                transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime);
 
-                currentPoint = currentPoint + 1;
-                if (currentPoint >= thePath.points.Length)
+                if (Vector3.Distance(transform.position, thePath.points[currentPoint].position) < .01f)
                 {
-                    reachedEnd = true;
+
+
+                    currentPoint = currentPoint + 1;
+                    if (currentPoint >= thePath.points.Length)
+                    {
+                        reachedEnd = true;
+
+                        selectedAttackPoint = Random.Range(0, theCastle.attackPoints.Length);
+                    }
                 }
-            }
-        } else
-        {
-            attackCounter -= Time.deltaTime; 
-            if (attackCounter <= 0)
+            } else
             {
-                attackCounter = timeBetweenAttacks;
-                theCastle.TakeDamage(damagePerAttack);
+                transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position,moveSpeed * Time.deltaTime);
+                attackCounter -= Time.deltaTime; 
+                if (attackCounter <= 0)
+                {
+                    attackCounter = timeBetweenAttacks;
+                    theCastle.TakeDamage(damagePerAttack);
+                }
             }
         }
     }
