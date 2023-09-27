@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8391868245875667748}
   - component: {fileID: 8391868245875667749}
-  m_Layer: 0
+  - component: {fileID: 6826374811458727151}
+  m_Layer: 6
   m_Name: Enemy (Mushroom)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8391868245875667746}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 16.12, y: -0, z: 2.31}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8391868247148387761}
@@ -44,9 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bbcd7dd077585d4b913e60582ad9375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 2
   timeBetweenAttacks: 0.5
   damagePerAttack: 10
+--- !u!136 &6826374811458727151
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391868245875667746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 0.81730825
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.14209995, z: 0}
 --- !u!1 &8391868247148387790
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8391868247148387761}
   - component: {fileID: 8391868247148387760}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +107,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 934a21cf6d971954fb0fb8037a36827b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -149,9 +164,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7736082404833409329, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5342761766297321256, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -5066368973109066051, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4120285653751773817, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2654206542894995365, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1181138311116423904, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -606399877261632159, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
       propertyPath: m_Name
       value: Mushroom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767523689163821079, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904690974974687913, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4864db353874678449d00580cd4cd3d3, type: 3}
