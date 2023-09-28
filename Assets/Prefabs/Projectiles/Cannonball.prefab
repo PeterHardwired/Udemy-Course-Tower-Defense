@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRB: {fileID: 6807898509706180911}
   moveSpeed: 5
+  impactEffect: {fileID: 7265038110670223661, guid: 4a297d7ce65fd7146aa5fa84e1c765b1, type: 3}
+  damageAmount: 5
 --- !u!54 &6807898509706180911
 Rigidbody:
   m_ObjectHideFlags: 0
