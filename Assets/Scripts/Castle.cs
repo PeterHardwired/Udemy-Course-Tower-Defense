@@ -13,6 +13,10 @@ public class Castle : MonoBehaviour
     public Slider healthSlider;
     public Transform[] attackPoints;
 
+    public GameObject destroyedCastle;
+    public ParticleSystem smoke;
+    public ParticleSystem fire;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,10 @@ public class Castle : MonoBehaviour
         {
             castleCurrentHealth = 0 ;
             gameObject.SetActive(false);
+            destroyedCastle.SetActive(true);
+            smoke.Play(); 
+            fire.Play();
+
         }
 
         healthSlider.value = castleCurrentHealth;
